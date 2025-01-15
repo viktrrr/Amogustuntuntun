@@ -6,10 +6,10 @@ int main() {
   char op;
   float num1, num2;
 
-  cout << "Enter operator: +, -, *, /: ";
+  cout << "Parašykite operatorių: +, -, *, /: ";
   cin >> op;
 
-  cout << "Enter two operands: ";
+  cout << "Parašykite skaičius: ";
   cin >> num1 >> num2;
 
   switch(op) {
@@ -31,8 +31,8 @@ int main() {
       break;
 
     default:
-      // If the operator is other than +, -, * or /, error message is shown
-      cout << "Error! operator is not correct";
+
+      cout << "Klaida! Operatorius parašytas netaisyklingai"; 
       break;
   }
 
