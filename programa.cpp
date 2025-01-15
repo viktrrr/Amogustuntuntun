@@ -1,5 +1,6 @@
 //kalkuliatorius 
 # include <iostream>
+#include <cassert> // Testavimui
 using namespace std;
 
 int main() {
@@ -36,6 +37,23 @@ int main() {
       cout << "Klaida! Operatorius parašytas netaisyklingai"; //Jeigu operatorius yra ne "-, +, *, /", tada bus klaida
       break;
   }
+}
 
-  return 0;
+void run_tests() {
+    cout << "Pradedami testai..." << endl;
+
+    // Testai
+    assert(calculate('+', 3, 2) == 5);  
+    assert(calculate('-', 10, 4) == 6); 
+    assert(calculate('*', 3, 3) == 9);  
+    assert(calculate('/', 8, 2) == 4);  
+    assert(calculate('/', 8, 0) == 0);  // Patikrinimas, kai dalinama iš nulio
+    assert(calculate('%', 5, 3) == 0);  // Netinkamas operatorius, grąžins 0
+
+    cout << "Visi testai sėkmingai atlikti!" << endl;
+}
+
+int main() {
+    run_tests();  // Atlikti testus
+    return 0;     // Baigti programą
 }
